@@ -1,9 +1,9 @@
 ---
 title: 'Node'
-description: 'Firecrawl Node SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown.'
+description: 'Firecrawl Node SDK是Firecrawl API的封装，帮助您轻松将网站转换为markdown格式。'
 icon: 'node'
 og:title: "Node SDK | Firecrawl"
-og:description: "Firecrawl Node SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown."
+og:description: "Firecrawl Node SDK是Firecrawl API的封装，帮助您轻松将网站转换为markdown格式。"
 ---
 
 import InstallationNode from '/snippets/v1/installation/js.mdx'
@@ -16,64 +16,63 @@ import CancelCrawlNodeShort from '/snippets/v1/crawl-delete/short/js.mdx'
 import MapNodeShort from '/snippets/v1/map/short/js.mdx'
 import CrawlWebSocketNodeBase from '/snippets/v1/crawl-websocket/base/js.mdx'
 
-## Installation
+## 安装
 
-To install the Firecrawl Node SDK, you can use npm:
+要安装Firecrawl Node SDK，您可以使用npm：
 
 <InstallationNode />
 
-## Usage
+## 使用方法
 
-1. Get an API key from [firecrawl.dev](https://firecrawl.dev)
-2. Set the API key as an environment variable named `FIRECRAWL_API_KEY` or pass it as a parameter to the `FirecrawlApp` class.
+1. 从[firecrawl.dev](https://firecrawl.dev)获取API密钥
+2. 将API密钥设置为名为`FIRECRAWL_API_KEY`的环境变量，或者将其作为参数传递给`FirecrawlApp`类。
 
-
-Here's an example of how to use the SDK with error handling:
+以下是如何使用带有错误处理的SDK的示例：
 
 <ScrapeAndCrawlExampleNode />
 
-### Scraping a URL
+### 抓取单个URL
 
-To scrape a single URL with error handling, use the `scrapeUrl` method. It takes the URL as a parameter and returns the scraped data as a dictionary.
+要使用错误处理抓取单个URL，请使用`scrapeUrl`方法。它接受URL作为参数，并以字典形式返回抓取的数据。
 
 <ScrapeNodeShort />
 
-### Crawling a Website
+### 爬取网站
 
-To crawl a website with error handling, use the `crawlUrl` method. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要使用错误处理爬取网站，请使用`crawlUrl`方法。它接受起始URL和可选参数作为参数。`params`参数允许您为爬取任务指定其他选项，例如要爬取的最大页面数、允许的域名和输出格式。
 
 <CrawlNodeShort />
 
-### Asynchronous Crawling
+### 异步爬取
 
-To crawl a website asynchronously, use the `crawlUrlAsync` method. It returns the crawl `ID` which you can use to check the status of the crawl job. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要异步爬取网站，请使用`crawlUrlAsync`方法。它返回爬取`ID`，您可以使用该ID检查爬取任务的状态。它接受起始URL和可选参数作为参数。`params`参数允许您为爬取任务指定其他选项，例如要爬取的最大页面数、允许的域名和输出格式。
 
 <CrawlAsyncNodeShort />
 
-### Checking Crawl Status
+### 检查爬取状态
 
-To check the status of a crawl job with error handling, use the `checkCrawlStatus` method. It takes the `ID` as a parameter and returns the current status of the crawl job.
+要使用错误处理检查爬取任务的状态，请使用`checkCrawlStatus`方法。它接受`ID`作为参数，并返回爬取任务的当前状态。
 
 <CheckCrawlStatusNodeShort />
 
-### Cancelling a Crawl
+### 取消爬取
 
-To cancel an asynchronous crawl job, use the `cancelCrawl` method. It takes the job ID of the asynchronous crawl as a parameter and returns the cancellation status.
+要取消异步爬取任务，请使用`cancelCrawl`方法。它接受异步爬取的任务ID作为参数，并返回取消状态。
 
 <CancelCrawlNodeShort />
 
-### Mapping a Website
+### 映射网站
 
-To map a website with error handling, use the `mapUrl` method. It takes the starting URL as a parameter and returns the mapped data as a dictionary.
+要使用错误处理映射网站，请使用`mapUrl`方法。它接受起始URL作为参数，并以字典形式返回映射数据。
 
 <MapNodeShort />
 
-### Crawling a Website with WebSockets
+### 使用WebSockets爬取网站
 
-To crawl a website with WebSockets, use the `crawlUrlAndWatch` method. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要使用WebSockets爬取网站，请使用`crawlUrlAndWatch`方法。它接受起始URL和可选参数作为参数。`params`参数允许您为爬取任务指定其他选项，例如要爬取的最大页面数、允许的域名和输出格式。
 
 <CrawlWebSocketNodeBase />
 
-## Error Handling
+## 错误处理
 
-The SDK handles errors returned by the Firecrawl API and raises appropriate exceptions. If an error occurs during a request, an exception will be raised with a descriptive error message. The examples above demonstrate how to handle these errors using `try/catch` blocks.
+SDK处理Firecrawl API返回的错误并引发适当的异常。如果在请求期间发生错误，将引发带有描述性错误消息的异常。上面的示例演示了如何使用`try/catch`块处理这些错误。

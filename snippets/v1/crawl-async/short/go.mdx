@@ -1,4 +1,5 @@
 ```go Go
+// 异步爬取一个网站
 crawlStatus, err := app.AsyncCrawlUrl("https://firecrawl.dev", nil, nil)
 if err != nil {
   log.Fatalf("Failed to send crawl request: %v", err)

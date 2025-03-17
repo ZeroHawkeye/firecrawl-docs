@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "start": "npx mintlify dev"
-  }
-}

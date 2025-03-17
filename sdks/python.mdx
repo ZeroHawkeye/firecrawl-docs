@@ -1,9 +1,9 @@
 ---
 title: 'Python'
-description: 'Firecrawl Python SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown.'
+description: 'Firecrawl Python SDK是Firecrawl API的封装，帮助您轻松将网站转换为markdown格式。'
 icon: 'python'
 og:title: "Python SDK | Firecrawl"
-og:description: "Firecrawl Python SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown."
+og:description: "Firecrawl Python SDK是Firecrawl API的封装，帮助您轻松将网站转换为markdown格式。"
 ---
 
 import InstallationPython from '/snippets/v1/installation/python.mdx'
@@ -16,65 +16,64 @@ import MapPythonShort from '/snippets/v1/map/short/python.mdx'
 import ScrapeAndCrawlExamplePython from '/snippets/v1/scrape-and-crawl/python.mdx'
 import CrawlWebSocketPythonBase from '/snippets/v1/crawl-websocket/base/python.mdx'
 
-## Installation
+## 安装
 
-To install the Firecrawl Python SDK, you can use pip:
+要安装Firecrawl Python SDK，您可以使用pip：
 
 <InstallationPython />
 
-## Usage
+## 使用方法
 
-1. Get an API key from [firecrawl.dev](https://firecrawl.dev)
-2. Set the API key as an environment variable named `FIRECRAWL_API_KEY` or pass it as a parameter to the `FirecrawlApp` class.
+1. 从[firecrawl.dev](https://firecrawl.dev)获取API密钥
+2. 将API密钥设置为名为`FIRECRAWL_API_KEY`的环境变量，或者将其作为参数传递给`FirecrawlApp`类。
 
-
-Here's an example of how to use the SDK:
+以下是如何使用SDK的示例：
 
 <ScrapeAndCrawlExamplePython />
 
-### Scraping a URL
+### 抓取单个URL
 
-To scrape a single URL, use the `scrape_url` method. It takes the URL as a parameter and returns the scraped data as a dictionary.
+要抓取单个URL，请使用`scrape_url`方法。它接受URL作为参数，并以字典形式返回抓取的数据。
 
 <ScrapePythonShort />
 
-### Crawling a Website
+### 爬取网站
 
-To crawl a website, use the `crawl_url` method. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要爬取网站，请使用`crawl_url`方法。它接受起始URL和可选参数作为参数。`params`参数允许您为爬取任务指定其他选项，例如要爬取的最大页面数、允许的域名和输出格式。
 
 <CrawlPythonShort />
 
-### Asynchronous Crawling
+### 异步爬取
 
-To crawl a website asynchronously, use the `crawl_url_async` method. It returns the crawl `ID` which you can use to check the status of the crawl job. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要异步爬取网站，请使用`crawl_url_async`方法。它返回爬取`ID`，您可以使用该ID检查爬取任务的状态。它接受起始URL和可选参数作为参数。`params`参数允许您为爬取任务指定其他选项，例如要爬取的最大页面数、允许的域名和输出格式。
 
 <CrawlAsyncPythonShort />
 
 
-### Checking Crawl Status
+### 检查爬取状态
 
-To check the status of a crawl job, use the `check_crawl_status` method. It takes the job ID as a parameter and returns the current status of the crawl job.
+要检查爬取任务的状态，请使用`check_crawl_status`方法。它接受任务ID作为参数，并返回爬取任务的当前状态。
 
 <CheckCrawlStatusPythonShort />
 
-### Cancelling a Crawl
+### 取消爬取
 
-To cancel an asynchronous crawl job, use the `cancel_crawl` method. It takes the job ID of the asynchronous crawl as a parameter and returns the cancellation status.
+要取消异步爬取任务，请使用`cancel_crawl`方法。它接受异步爬取的任务ID作为参数，并返回取消状态。
 
 <CancelCrawlPythonShort />
 
-### Map a Website
+### 映射网站
 
-Use `map_url` to generate a list of URLs from a website. The `params` argument let you customize the mapping process, including options to exclude subdomains or to utilize the sitemap.
+使用`map_url`生成网站的URL列表。`params`参数允许您自定义映射过程，包括排除子域名或使用网站地图的选项。
 
 <MapPythonShort />
 
-### Crawling a Website with WebSockets
+### 使用WebSockets爬取网站
 
-To crawl a website with WebSockets, use the `crawl_url_and_watch` method. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要使用WebSockets爬取网站，请使用`crawl_url_and_watch`方法。它接受起始URL和可选参数作为参数。`params`参数允许您为爬取任务指定其他选项，例如要爬取的最大页面数、允许的域名和输出格式。
 
 <CrawlWebSocketPythonBase />
 
-## Error Handling
+## 错误处理
 
-The SDK handles errors returned by the Firecrawl API and raises appropriate exceptions. If an error occurs during a request, an exception will be raised with a descriptive error message.
+SDK处理Firecrawl API返回的错误并引发适当的异常。如果在请求期间发生错误，将引发带有描述性错误消息的异常。

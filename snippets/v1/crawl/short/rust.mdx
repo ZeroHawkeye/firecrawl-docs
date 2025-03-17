@@ -1,4 +1,5 @@
 ```rust Rust
+// 配置爬取选项
 let crawl_options = CrawlOptions {
     scrape_options: CrawlScrapeOptions {
         formats: vec![ CrawlScrapeFormats::Markdown, CrawlScrapeFormats::HTML ].into(),
@@ -8,6 +9,7 @@ let crawl_options = CrawlOptions {
     ..Default::default()
 };
 
+// 爬取一个网站
 let crawl_result = app
     .crawl_url("https://mendable.ai", crawl_options)
     .await;
@@ -16,4 +18,3 @@ match crawl_result {
     Ok(data) => println!("Crawl Result (used {} credits):\n{:#?}", data.credits_used, data.data),
     Err(e) => eprintln!("Crawl failed: {}", e),
 }
-```

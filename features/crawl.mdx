@@ -1,9 +1,9 @@
 ---
-title: 'Crawl'
-description: 'Firecrawl can recursively search through a urls subdomains, and gather the content'
+title: '爬取'
+description: 'Firecrawl可以递归搜索URL的子域名，并收集内容'
 icon: 'spider'
-og:title: "Crawl | Firecrawl"
-og:description: "Firecrawl can recursively search through a urls subdomains, and gather the content"
+og:title: "爬取 | Firecrawl"
+og:description: "Firecrawl可以递归搜索URL的子域名，并收集内容"
 ---
 
 import InstallationPython from "/snippets/v1/installation/python.mdx";
@@ -27,35 +27,35 @@ import CrawlWebSocketPython from "/snippets/v1/crawl-websocket/base/python.mdx";
 import CrawlWebSocketNode from "/snippets/v1/crawl-websocket/base/js.mdx";
 import CrawlWebhookCURL from "/snippets/v1/crawl-webhook/base/curl.mdx";
 
-Firecrawl thoroughly crawls websites, ensuring comprehensive data extraction while bypassing any web blocker mechanisms. Here's how it works:
+Firecrawl彻底爬取网站，确保全面的数据提取，同时绕过任何网络拦截机制。以下是其工作原理：
 
-1. **URL Analysis:**
-   Begins with a specified URL, identifying links by looking at the sitemap and then crawling the website. If no sitemap is found, it will crawl the website following the links.
+1. **URL分析：**
+   从指定的URL开始，通过查看网站地图来识别链接，然后爬取网站。如果找不到网站地图，它将跟随链接爬取网站。
 
-2. **Recursive Traversal:**
-   Recursively follows each link to uncover all subpages.
+2. **递归遍历：**
+   递归跟踪每个链接以发现所有子页面。
 
-3. **Content Scraping:**
-   Gathers content from every visited page while handling any complexities like JavaScript rendering or rate limits.
+3. **内容抓取：**
+   从每个访问的页面收集内容，同时处理JavaScript渲染或速率限制等复杂问题。
 
-4. **Result Compilation:**
-   Converts collected data into clean markdown or structured output, perfect for LLM processing or any other task.
+4. **结果编译：**
+   将收集的数据转换为干净的markdown或结构化输出，非常适合LLM处理或任何其他任务。
 
-This method guarantees an exhaustive crawl and data collection from any starting URL.
-
-
-## Crawling
+这种方法保证了从任何起始URL进行彻底的爬取和数据收集。
 
 
-### /crawl endpoint
-
-Used to crawl a URL and all accessible subpages. This submits a crawl job and returns a job ID to check the status of the crawl.
+## 爬取
 
 
-<Warning>By default - Crawl will ignore sublinks of a page if they aren't children of the url you provide. So, the website.com/other-parent/blog-1 wouldn't be returned if you crawled website.com/blogs/. If you want website.com/other-parent/blog-1, use the `allowBackwardLinks` parameter</Warning>
+### /crawl 端点
+
+用于爬取URL及其所有可访问的子页面。这会提交一个爬取任务并返回一个任务ID，用于检查爬取状态。
 
 
-### Installation 
+<Warning>默认情况下 - 如果页面的子链接不是您提供的URL的子链接，爬取将忽略这些子链接。因此，如果您爬取website.com/blogs/，则不会返回website.com/other-parent/blog-1。如果您想要website.com/other-parent/blog-1，请使用`allowBackwardLinks`参数</Warning>
+
+
+### 安装 
 
 <CodeGroup>
 
@@ -66,7 +66,7 @@ Used to crawl a URL and all accessible subpages. This submits a crawl job and re
 
 </CodeGroup>
 
-### Usage
+### 使用方法
 
 <CodeGroup>
 
@@ -78,17 +78,17 @@ Used to crawl a URL and all accessible subpages. This submits a crawl job and re
 
 </CodeGroup>
 
-### Response
+### 响应
 
-If you're using cURL or `async crawl` functions on SDKs, this will return an `ID` where you can use to check the status of the crawl.
+如果您使用cURL或SDK上的`async crawl`函数，这将返回一个`ID`，您可以使用它来检查爬取状态。
 
 <AsyncCrawlOutput />
 
-### Check Crawl Job
+### 检查爬取任务
 
-Used to check the status of a crawl job and get its result.
+用于检查爬取任务的状态并获取其结果。
 
-<Note>This endpoint only works for crawls that are in progress or crawls that have completed recently. </Note>
+<Note>此端点仅适用于正在进行中或最近完成的爬取。</Note>
 
 
 <CodeGroup>
@@ -101,16 +101,16 @@ Used to check the status of a crawl job and get its result.
 
 </CodeGroup>
 
-#### Response Handling
+#### 响应处理
 
-The response varies based on the crawl's status.
+响应根据爬取状态而变化。
 
-For not completed or large responses exceeding 10MB, a `next` URL parameter is provided. You must request this URL to retrieve the next 10MB of data. If the `next` parameter is absent, it indicates the end of the crawl data.
+对于未完成或超过10MB的大型响应，会提供一个`next`URL参数。您必须请求此URL以检索下一个10MB的数据。如果`next`参数不存在，则表示爬取数据的结束。
 
-The skip parameter sets the maximum number of results returned for each chunk of results returned. 
+skip参数设置每个返回结果块的最大结果数。
 
 <Info>
-The skip and next parameter are only relavent when hitting the api directly. If you're using the SDK, we handle this for you and will return all the results at once.
+skip和next参数仅在直接访问API时相关。如果您使用SDK，我们会为您处理这些参数，并一次性返回所有结果。
 </Info>
 
 
@@ -119,41 +119,41 @@ The skip and next parameter are only relavent when hitting the api directly. If 
   <CheckCrawlJobOutputCompleted />
 </CodeGroup>
 
-## Crawl WebSocket
+## 爬取WebSocket
 
-Firecrawl's WebSocket-based method, `Crawl URL and Watch`, enables real-time data extraction and monitoring. Start a crawl with a URL and customize it with options like page limits, allowed domains, and output formats, ideal for immediate data processing needs.
+Firecrawl基于WebSocket的方法`爬取URL并监视`，实现了实时数据提取和监控。使用URL启动爬取，并通过页面限制、允许的域名和输出格式等选项自定义它，非常适合即时数据处理需求。
 
 <CodeGroup>
   <CrawlWebSocketPython />
   <CrawlWebSocketNode />
 </CodeGroup>
 
-## Crawl Webhook
+## 爬取Webhook
 
-You can now pass a `webhook` parameter to the `/crawl` endpoint. This will send a POST request to the URL you specify when the crawl is started, updated and completed.
+您现在可以向`/crawl`端点传递一个`webhook`参数。当爬取开始、更新和完成时，这将向您指定的URL发送POST请求。
 
-The webhook will now trigger for every page crawled and not just the whole result at the end.
+webhook现在会为每个爬取的页面触发，而不仅仅是在最后返回整个结果。
 
 <CrawlWebhookCURL />
 
-### Webhook Events
+### Webhook事件
 
-There are now 4 types of events:
+现在有4种类型的事件：
 
-- `crawl.started` - Triggered when the crawl is started.
-- `crawl.page` - Triggered for every page crawled.
-- `crawl.completed` - Triggered when the crawl is completed to let you know it's done (Beta)**
-- `crawl.failed` - Triggered when the crawl fails.
+- `crawl.started` - 当爬取开始时触发。
+- `crawl.page` - 为每个爬取的页面触发。
+- `crawl.completed` - 当爬取完成时触发，让您知道它已完成（测试版）**
+- `crawl.failed` - 当爬取失败时触发。
 
-### Webhook Response
+### Webhook响应
 
-- `success` - If the webhook was successful in crawling the page correctly.
-- `type` - The type of event that occurred.
-- `id` - The ID of the crawl.
-- `data` - The data that was scraped (Array). This will only be non empty on `crawl.page` and will contain 1 item if the page was scraped successfully. The response is the same as the `/scrape` endpoint.
-- `error` - If the webhook failed, this will contain the error message.
+- `success` - 如果webhook成功正确爬取页面。
+- `type` - 发生的事件类型。
+- `id` - 爬取的ID。
+- `data` - 抓取的数据（数组）。这只会在`crawl.page`上非空，如果页面成功抓取，将包含1个项目。响应与`/scrape`端点相同。
+- `error` - 如果webhook失败，这将包含错误消息。
 
-**Beta consideration
+**测试版考虑因素
 
-- There is a very tiny chance that the `crawl.completed` event may be triggered while the final `crawl.page` events are still being processed. We're working on a fix for this.
+- 有极小的可能性`crawl.completed`事件可能在最终的`crawl.page`事件仍在处理时触发。我们正在修复这个问题。
 

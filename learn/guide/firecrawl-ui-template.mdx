@@ -1,41 +1,41 @@
 ---
-title: "Web Connector UI Template"
-description: "A guide to setting up a UI for web ingestion using Firecrawl with React."
-og:title: "Web Connector UI Template | Firecrawl"
-og:description: "Learn how to set up a UI for web ingestion using Firecrawl with React."
+title: "Web Connector UI 模板"
+description: "使用 Firecrawl 和 React 设置网页数据采集 UI 的指南。"
+og:title: "Web Connector UI 模板 | Firecrawl"
+og:description: "学习如何使用 Firecrawl 和 React 设置网页数据采集 UI。"
 ---
 
-> Note: this example is using [v0 version of the Firecrawl API](/v0/introduction). You can install the 0.0.20 version for the Python SDK or the 0.0.36 for the Node SDK.
+> 注意：此示例使用的是 [Firecrawl API 的 v0 版本](/v0/introduction)。您可以安装 Python SDK 的 0.0.20 版本或 Node SDK 的 0.0.36 版本。
 
-This template simplifies the creation of a web connector UI for Firecrawl using React. 
-It includes a pre-built component that interfaces with the Firecrawl API, enabling you to quickly set up a web crawling and scraping interface for users to extract data for their AI applications.
-![Firecrawl UI Template](/images/firecrawl-ui.png)
+此模板简化了使用 React 为 Firecrawl 创建 Web 连接器 UI 的过程。
+它包含一个预构建的组件，该组件与 Firecrawl API 接口对接，使您能够快速设置网页爬取和抓取界面，让用户为其 AI 应用程序提取数据。
+![Firecrawl UI 模板](/images/firecrawl-ui.png)
 
-This template allows users to enter a URL for crawling. If subpages are detected, the template will crawl them and display a list of discovered URLs. Users can then select which URLs to scrape, and the scraped content will be ingested into their AI application and displayed in the UI.
-> **Security Consideration: This example exposes Firecrawl API keys in the client-side code. For production use, it is strongly recommended to move API interactions to a server-side implementation to protect your API keys.**
+此模板允许用户输入 URL 进行爬取。如果检测到子页面，模板将爬取它们并显示发现的 URL 列表。然后用户可以选择要抓取的 URL，抓取的内容将被导入到他们的 AI 应用程序中并在 UI 中显示。
+> **安全考虑：此示例在客户端代码中暴露了 Firecrawl API 密钥。对于生产环境，强烈建议将 API 交互移至服务器端实现，以保护您的 API 密钥。**
 
-## Prerequisites
+## 前提条件
 
-- Node.js (v14 or later recommended)
+- Node.js（推荐 v14 或更高版本）
 - npm
-- Make sure you have installed [shadcn](https://github.com/shadcn-ui/ui)
-- Make sure you have installed [tailwindcss](https://tailwindcss.com/docs/installation)
+- 确保您已安装 [shadcn](https://github.com/shadcn-ui/ui)
+- 确保您已安装 [tailwindcss](https://tailwindcss.com/docs/installation)
 
-## Getting Started
+## 开始使用
  
-1. Install dependencies:
+1. 安装依赖项：
 
-- Install the [shadcn components](https://github.com/shadcn-ui/ui) you will need:
+- 安装您需要的 [shadcn 组件](https://github.com/shadcn-ui/ui)：
 ```
 npx shadcn-ui@latest add button card checkbox collapsible input label
 ```
 
-- Install the rest of the dependencies:
+- 安装其余依赖项：
 ```
 npm install clsx lucide-react tailwind-merge tailwindcss-animate class-variance-authority
 ```
 
-2. Create a `lib/utils.ts` file and add the following code:
+2. 创建 `lib/utils.ts` 文件并添加以下代码：
 
 ```typescript
 import { type ClassValue, clsx } from "clsx"
@@ -46,9 +46,9 @@ export function cn(...inputs: ClassValue[]) {
 }
 ```
 
-3. Copy and paste our main ingestion component. **Make sure to replace the `FIRECRAWL_API_KEY` with your key.**
+3. 复制并粘贴我们的主要数据采集组件。**确保将 `FIRECRAWL_API_KEY` 替换为您的密钥。**
 
-<Accordion title="Ingestion Component (ingestion.tsx)">
+<Accordion title="数据采集组件 (ingestion.tsx)">
 ```jsx
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import {
@@ -69,10 +69,10 @@ import {
 } from "@/components/ui/collapsible";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 
-//! Hardcoded values (not recommended for production)
-//! Highly recommended to move all Firecrawl API calls to the backend (e.g. Next.js API route)
-const FIRECRAWL_API_URL = "https://api.firecrawl.dev"; // Replace with your actual API URL whether it is local or using Firecrawl Cloud
-const FIRECRAWL_API_KEY = "fc-YOUR_API_KEY"; // Replace with your actual API key
+//! 硬编码值（不推荐用于生产环境）
+//! 强烈建议将所有 Firecrawl API 调用移至后端（例如 Next.js API 路由）
+const FIRECRAWL_API_URL = "https://api.firecrawl.dev"; // 替换为您的实际 API URL，无论是本地还是使用 Firecrawl Cloud
+const FIRECRAWL_API_KEY = "fc-YOUR_API_KEY"; // 替换为您的实际 API 密钥
 
 interface FormData {
   url: string;
@@ -265,7 +265,7 @@ export default function FirecrawlComponent() {
                 total: urls.length || null,
               });
               if (statusData.status !== "completed") {
-                // Wait for 1 second before polling again
+                // 等待 1 秒后再次轮询
                 await new Promise((resolve) => setTimeout(resolve, 1000));
                 console.log("Polling again...");
                 console.log(statusData);
@@ -385,23 +385,22 @@ export default function FirecrawlComponent() {
       <Card>
         <CardHeader className="flex items-start justify-between mb-0 pb-4">
           <CardTitle className="flex items-center justify-between w-full space-x-2">
-            <span className="text-base">Extract web content</span>
+            <span className="text-base">提取网页内容</span>
             <a
               href="https://www.firecrawl.dev"
               className="text-xs text-gray-500 font-normal px-3 py-1 bg-zinc-100 rounded-xl hover:bg-zinc-200 transition-colors"
             >
-              Powered by Firecrawl 🔥
+              由 Firecrawl 提供支持 🔥
             </a>
           </CardTitle>
           <div className="text-sm text-gray-500 w-11/12 items-center">
-            Use this component to quickly give your users the ability to connect
-            their AI apps to web data with Firecrawl. Learn more on the{" "}
+            使用此组件可以快速让您的用户能够通过 Firecrawl 将他们的 AI 应用程序连接到网页数据。在{" "}
             <a
               href="https://docs.firecrawl.dev/"
               className="text-sm text-blue-500"
             >
-              Firecrawl docs!
-            </a>
+              Firecrawl 文档
+            </a>上了解更多信息！
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -440,10 +439,10 @@ export default function FirecrawlComponent() {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       ></path>
                     </svg>
-                    <span className="sr-only">Loading...</span>
+                    <span className="sr-only">加载中...</span>
                   </div>
                 ) : (
-                  "Run"
+                  "运行"
                 )}
               </Button>
             </div>
@@ -454,7 +453,7 @@ export default function FirecrawlComponent() {
             >
               <CollapsibleTrigger asChild>
                 <Button variant="ghost" className="w-full justify-between pl-2">
-                  Advanced Options
+                  高级选项
                   <ChevronDown className="h-4 w-4 opacity-50" />
                 </Button>
               </CollapsibleTrigger>
@@ -472,7 +471,7 @@ export default function FirecrawlComponent() {
                     }
                   />
                   <label htmlFor="crawlSubPages" className="text-sm">
-                    Crawl sub-pages
+                    爬取子页面
                   </label>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -481,7 +480,7 @@ export default function FirecrawlComponent() {
                       htmlFor="limit"
                       className="block text-left w-full pb-2"
                     >
-                      Limit *
+                      限制 *
                     </Label>
                     <Input
                       id="limit"
@@ -496,7 +495,7 @@ export default function FirecrawlComponent() {
                       htmlFor="maxDepth"
                       className="block text-left w-full pb-2"
                     >
-                      Max depth
+                      最大深度
                     </Label>
                     <Input
                       id="maxDepth"
@@ -513,7 +512,7 @@ export default function FirecrawlComponent() {
                       htmlFor="excludePaths"
                       className="block text-left w-full pb-2"
                     >
-                      Exclude paths
+                      排除路径
                     </Label>
                     <Input
                       id="excludePaths"
@@ -528,7 +527,7 @@ export default function FirecrawlComponent() {
                       htmlFor="includePaths"
                       className="block text-left w-full pb-2"
                     >
-                      Include only paths
+                      仅包含路径
                     </Label>
                     <Input
                       id="includePaths"
@@ -552,7 +551,7 @@ export default function FirecrawlComponent() {
                     }
                   />
                   <label htmlFor="extractMainContent" className="text-sm">
-                    Extract only main content (no headers, navs, footers, etc.)
+                    仅提取主要内容（无页眉、导航、页脚等）
                   </label>
                 </div>
               </CollapsibleContent>
@@ -581,16 +580,16 @@ export default function FirecrawlComponent() {
                         className="text-sm cursor-pointer"
                       >
                         {selectedUrls.length === crawledUrls.length
-                          ? `Unselect All (${selectedUrls.length})`
-                          : `Select All (${selectedUrls.length})`}
+                          ? `取消全选 (${selectedUrls.length})`
+                          : `全选 (${selectedUrls.length})`}
                       </label>
                     </>
                   )}
               </div>
               <div className="text-sm text-gray-600">
                 {isScraping
-                  ? `Scraped ${crawlStatus.current} page(s) in ${elapsedTime}s`
-                  : `Crawled ${crawlStatus.current} pages in ${elapsedTime}s`}
+                  ? `已抓取 ${crawlStatus.current} 个页面，用时 ${elapsedTime}秒`
+                  : `已爬取 ${crawlStatus.current} 个页面，用时 ${elapsedTime}秒`}
               </div>
             </div>
           )}
@@ -631,8 +630,8 @@ export default function FirecrawlComponent() {
                     <ChevronLeft className="h-5 w-5" />
                   </Button>
                   <span className="text-sm text-gray-500">
-                    Page {currentPage} of{" "}
-                    {Math.ceil(crawledUrls.length / urlsPerPage)}
+                    第 {currentPage} 页，共{" "}
+                    {Math.ceil(crawledUrls.length / urlsPerPage)} 页
                   </span>
                   <Button
                     variant="outline"
@@ -654,7 +653,7 @@ export default function FirecrawlComponent() {
               onClick={handleScrapeSelected}
               disabled={loading || selectedUrls.length === 0}
             >
-              Scrape Selected URLs
+              抓取选定的 URL
             </Button>
           )}
         </CardFooter>
@@ -662,10 +661,9 @@ export default function FirecrawlComponent() {
 
       {Object.keys(scrapeResults).length > 0 && (
         <div className="mt-4">
-          <h2 className="text-base font-bold ">Scrape Results</h2>
+          <h2 className="text-base font-bold ">抓取结果</h2>
           <p className="text-sm text-gray-500">
-            You can do whatever you want with the scrape results. Here is a
-            basic showcase of the markdown.
+            您可以对抓取结果进行任何操作。这里是 markdown 的基本展示。
           </p>
           <div className="flex flex-col gap-4 mt-4 w-full">
             {Object.entries(scrapeResults).map(([url, result]) => (
@@ -689,7 +687,7 @@ export default function FirecrawlComponent() {
                     ) : (
                       <>
                         <p className="text-red-500">
-                          Failed to scrape this URL
+                          抓取此 URL 失败
                         </p>
                         <p className="text-zinc-500 font-mono">
                           {result.toString()}
@@ -711,24 +709,24 @@ export default function FirecrawlComponent() {
 </Accordion>
 
 
-## Customization
+## 自定义
 
-Beacuse this is not a library, you can customize the UI to your liking. Just edit the code just like shadcn.
+由于这不是一个库，您可以根据自己的喜好自定义 UI。只需像 shadcn 一样编辑代码即可。
 
-## Security Considerations
+## 安全考虑
 
-For production use, consider the following security measures:
+对于生产环境使用，请考虑以下安全措施：
 
-- Move API interactions to a server-side implementation to protect your Firecrawl API key.
+- 将 API 交互移至服务器端实现，以保护您的 Firecrawl API 密钥。
 
-## Learn More
+## 了解更多
 
-For more information about Firecrawl and its API, visit the [Firecrawl documentation](https://docs.firecrawl.dev/).
+有关 Firecrawl 及其 API 的更多信息，请访问 [Firecrawl 文档](https://docs.firecrawl.dev/)。
 
-## Contributing
+## 贡献
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+欢迎贡献！请随时提交 Pull Request。
 
-## License
+## 许可证
 
-The Firecrawl Ingestion UI Template is licensed under the MIT License.
+Firecrawl Ingestion UI 模板采用 MIT 许可证。
