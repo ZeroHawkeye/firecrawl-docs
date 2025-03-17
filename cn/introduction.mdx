@@ -1,8 +1,8 @@
 ---
-title: Quickstart
-description: "Firecrawl allows you to turn entire websites into LLM-ready markdown"
-og:title: "Quickstart | Firecrawl"
-og:description: "Firecrawl allows you to turn entire websites into LLM-ready markdown"
+title: 快速入门
+description: "Firecrawl 允许您将整个网站转换为LLM就绪的markdown格式"
+og:title: "快速入门 | Firecrawl"
+og:description: "Firecrawl 允许您将整个网站转换为LLM就绪的markdown格式"
 ---
 
 import InstallationPython from "/snippets/v1/installation/python.mdx";
@@ -41,49 +41,49 @@ import ScrapeActionsOutput from "/snippets/v1/scrape/actions/output.mdx";
 
 <img className="block" src="/images/hero.png" alt="Hero Light" />
 
-## Welcome to Firecrawl
+## 欢迎使用 Firecrawl
 
-[Firecrawl](https://firecrawl.dev?ref=github) is an API service that takes a URL, crawls it, and converts it into clean markdown. We crawl all accessible subpages and give you clean markdown for each. No sitemap required.
+[Firecrawl](https://firecrawl.dev?ref=github) 是一个API服务，它接收URL，爬取内容，并将其转换为干净的markdown格式。我们爬取所有可访问的子页面，并为每个页面提供干净的markdown。无需站点地图。
 
-## How to use it?
+## 如何使用？
 
-We provide an easy to use API with our hosted version. You can find the playground and documentation [here](https://firecrawl.dev/playground). You can also self host the backend if you'd like.
+我们提供了一个易于使用的API，通过我们的托管版本。您可以在[这里](https://firecrawl.dev/playground)找到演示平台和文档。如果您愿意，也可以自行托管后端。
 
-Check out the following resources to get started:
-- [x] **API**: [Documentation](https://docs.firecrawl.dev/api-reference/introduction)
-- [x] **SDKs**: [Python](https://docs.firecrawl.dev/sdks/python), [Node](https://docs.firecrawl.dev/sdks/node), [Go](https://docs.firecrawl.dev/sdks/go), [Rust](https://docs.firecrawl.dev/sdks/rust)
-- [x] **LLM Frameworks**: [Langchain (python)](https://python.langchain.com/docs/integrations/document_loaders/firecrawl/), [Langchain (js)](https://js.langchain.com/docs/integrations/document_loaders/web_loaders/firecrawl), [Llama Index](https://docs.llamaindex.ai/en/latest/examples/data_connectors/WebPageDemo/#using-firecrawl-reader), [Crew.ai](https://docs.crewai.com/), [Composio](https://composio.dev/tools/firecrawl/all), [PraisonAI](https://docs.praison.ai/firecrawl/), [Superinterface](https://superinterface.ai/docs/assistants/functions/firecrawl), [Vectorize](https://docs.vectorize.io/integrations/source-connectors/firecrawl)
-- [x] **Low-code Frameworks**: [Dify](https://dify.ai/blog/dify-ai-blog-integrated-with-firecrawl), [Langflow](https://docs.langflow.org/), [Flowise AI](https://docs.flowiseai.com/integrations/langchain/document-loaders/firecrawl), [Cargo](https://docs.getcargo.io/integration/firecrawl), [Pipedream](https://pipedream.com/apps/firecrawl/)
-- [x] **Others**: [Zapier](https://zapier.com/apps/firecrawl/integrations), [Pabbly Connect](https://www.pabbly.com/connect/integrations/firecrawl/)
-- [ ] Want an SDK or Integration? Let us know by opening an issue.
+查看以下资源开始使用：
+- [x] **API**: [文档](https://docs.firecrawl.dev/api-reference/introduction)
+- [x] **SDK**: [Python](https://docs.firecrawl.dev/sdks/python), [Node](https://docs.firecrawl.dev/sdks/node), [Go](https://docs.firecrawl.dev/sdks/go), [Rust](https://docs.firecrawl.dev/sdks/rust)
+- [x] **LLM框架**: [Langchain (python)](https://python.langchain.com/docs/integrations/document_loaders/firecrawl/), [Langchain (js)](https://js.langchain.com/docs/integrations/document_loaders/web_loaders/firecrawl), [Llama Index](https://docs.llamaindex.ai/en/latest/examples/data_connectors/WebPageDemo/#using-firecrawl-reader), [Crew.ai](https://docs.crewai.com/), [Composio](https://composio.dev/tools/firecrawl/all), [PraisonAI](https://docs.praison.ai/firecrawl/), [Superinterface](https://superinterface.ai/docs/assistants/functions/firecrawl), [Vectorize](https://docs.vectorize.io/integrations/source-connectors/firecrawl)
+- [x] **低代码框架**: [Dify](https://dify.ai/blog/dify-ai-blog-integrated-with-firecrawl), [Langflow](https://docs.langflow.org/), [Flowise AI](https://docs.flowiseai.com/integrations/langchain/document-loaders/firecrawl), [Cargo](https://docs.getcargo.io/integration/firecrawl), [Pipedream](https://pipedream.com/apps/firecrawl/)
+- [x] **其他**: [Zapier](https://zapier.com/apps/firecrawl/integrations), [Pabbly Connect](https://www.pabbly.com/connect/integrations/firecrawl/)
+- [ ] 需要SDK或集成？请通过提交issue告诉我们。
 
-**Self-host:** To self-host refer to guide [here](/contributing/self-host).
+**自托管:** 要自托管，请参考[此处](/contributing/self-host)的指南。
 
-### API Key
+### API密钥
 
-To use the API, you need to sign up on [Firecrawl](https://firecrawl.dev) and get an API key.
+要使用API，您需要在[Firecrawl](https://firecrawl.dev)上注册并获取API密钥。
 
-### Features
+### 功能
 
-- [**Scrape**](#scraping): scrapes a URL and get its content in LLM-ready format (markdown, structured data via [LLM Extract](#extraction), screenshot, html)
-- [**Crawl**](#crawling): scrapes all the URLs of a web page and return content in LLM-ready format
-- [**Map**](/features/map): input a website and get all the website urls - extremely fast
+- [**抓取**](#抓取): 抓取URL并以LLM就绪格式获取其内容（markdown、通过[LLM提取](#提取)的结构化数据、截图、html）
+- [**爬取**](#爬取): 抓取网页的所有URL并以LLM就绪格式返回内容
+- [**映射**](/features/map): 输入网站并获取所有网站URL - 速度极快
 
-### Powerful Capabilities
-- **LLM-ready formats**: markdown, structured data, screenshot, HTML, links, metadata
-- **The hard stuff**: proxies, anti-bot mechanisms, dynamic content (js-rendered), output parsing, orchestration
-- **Customizability**: exclude tags, crawl behind auth walls with custom headers, max crawl depth, etc...
-- **Media parsing**: pdfs, docx, images.
-- **Reliability first**: designed to get the data you need - no matter how hard it is.
-- **Actions**: click, scroll, input, wait and more before extracting data
+### 强大的功能
+- **LLM就绪格式**: markdown、结构化数据、截图、HTML、链接、元数据
+- **处理困难任务**: 代理、反机器人机制、动态内容（js渲染）、输出解析、编排
+- **可定制性**: 排除标签、使用自定义头信息爬取认证墙后的内容、最大爬取深度等...
+- **媒体解析**: pdf、docx、图像。
+- **可靠性优先**: 设计用于获取您需要的数据 - 无论多么困难。
+- **操作**: 在提取数据前点击、滚动、输入、等待等更多操作
 
-You can find all of Firecrawl's capabilities and how to use them in our [documentation](https://docs.firecrawl.dev)
+您可以在我们的[文档](https://docs.firecrawl.dev)中找到Firecrawl的所有功能及其使用方法
 
-## Crawling
+## 爬取
 
-Used to crawl a URL and all accessible subpages. This submits a crawl job and returns a job ID to check the status of the crawl.
+用于爬取URL及其所有可访问的子页面。这会提交一个爬取任务并返回一个作业ID，用于检查爬取状态。
 
-### Installation
+### 安装
 
 <CodeGroup>
 
@@ -97,7 +97,7 @@ Used to crawl a URL and all accessible subpages. This submits a crawl job and re
 
 </CodeGroup>
 
-### Usage
+### 使用方法
 
 <CodeGroup>
 
@@ -109,13 +109,13 @@ Used to crawl a URL and all accessible subpages. This submits a crawl job and re
 
 </CodeGroup>
 
-If you're using cURL or `async crawl` functions on SDKs, this will return an `ID` where you can use to check the status of the crawl.
+如果您使用cURL或SDK上的`async crawl`函数，这将返回一个`ID`，您可以用它来检查爬取状态。
 
 <CrawlAsyncOutput />
 
-### Check Crawl Job
+### 检查爬取任务
 
-Used to check the status of a crawl job and get its result.
+用于检查爬取任务的状态并获取其结果。
 
 <CodeGroup>
 
@@ -127,18 +127,18 @@ Used to check the status of a crawl job and get its result.
 
 </CodeGroup>
 
-#### Response
+#### 响应
 
-The response will be different depending on the status of the crawl. For not completed or large responses exceeding 10MB, a `next` URL parameter is provided. You must request this URL to retrieve the next 10MB of data. If the `next` parameter is absent, it indicates the end of the crawl data.
+响应将根据爬取的状态而有所不同。对于未完成或超过10MB的大型响应，将提供一个`next`URL参数。您必须请求此URL以检索下一个10MB的数据。如果`next`参数不存在，则表示爬取数据的结束。
 
 <CodeGroup>
   <CheckCrawlJobOutputScraping />
   <CheckCrawlJobOutputCompleted />
 </CodeGroup>
 
-## Scraping
+## 抓取
 
-To scrape a single URL, use the `scrape_url` method. It takes the URL as a parameter and returns the scraped data as a dictionary.
+要抓取单个URL，请使用`scrape_url`方法。它接受URL作为参数，并以字典形式返回抓取的数据。
 
 <CodeGroup>
 
@@ -154,17 +154,17 @@ To scrape a single URL, use the `scrape_url` method. It takes the URL as a param
 
 </CodeGroup>
 
-### Response
+### 响应
 
-SDKs will return the data object directly. cURL will return the payload exactly as shown below.
+SDK将直接返回数据对象。cURL将返回与下面完全相同的有效负载。
 
 <ScrapeResponse />
 
-## Extraction
+## 提取
 
-With LLM extraction, you can easily extract structured data from any URL. We support pydantic schemas to make it easier for you too. Here is how you to use it:
+通过LLM提取，您可以轻松地从任何URL提取结构化数据。我们还支持pydantic模式，使其更容易使用。以下是使用方法：
 
-v1 is only supported on node, python and cURL at this time.
+v1目前仅支持node、python和cURL。
 
 <CodeGroup>
 
@@ -174,13 +174,13 @@ v1 is only supported on node, python and cURL at this time.
 
 </CodeGroup>
 
-Output:
+输出：
 
 <ExtractOutput />
 
-### Extracting without schema (New)
+### 无模式提取（新功能）
 
-You can now extract without a schema by just passing a `prompt` to the endpoint. The llm chooses the structure of the data.
+现在您可以通过仅向端点传递`prompt`来进行无模式提取。LLM会选择数据的结构。
 
 <CodeGroup>
 
@@ -188,11 +188,11 @@ You can now extract without a schema by just passing a `prompt` to the endpoint.
 
 </CodeGroup>
 
-Output:
+输出：
 
 <ExtractNoSchemaOutput />
 
-### Extraction (v0)
+### 提取 (v0)
 
 <CodeGroup>
 ```python Python
