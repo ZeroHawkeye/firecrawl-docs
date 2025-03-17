@@ -3,7 +3,7 @@ from firecrawl import FirecrawlApp
 
 app = FirecrawlApp(api_key="fc-YOUR_API_KEY")
 
-# Crawl a website:
+# 爬取一个网站:
 crawl_status = app.crawl_url(
   'https://firecrawl.dev', 
   params={
@@ -13,4 +13,3 @@ crawl_status = app.crawl_url(
   poll_interval=30
 )
 print(crawl_status)
-```

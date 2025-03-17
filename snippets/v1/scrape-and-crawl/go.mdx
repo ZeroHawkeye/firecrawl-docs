@@ -11,7 +11,7 @@ func ptr[T any](v T) *T {
 }
 
 func main() {
-	// Initialize the FirecrawlApp with your API key
+	// 使用你的API密钥初始化FirecrawlApp
 	apiKey := "fc-YOUR_API_KEY"
 	apiUrl := "https://api.firecrawl.dev"
 	version := "v1"
@@ -21,7 +21,7 @@ func main() {
 		log.Fatalf("Failed to initialize FirecrawlApp: %v", err)
 	}
 
-  // Scrape a website
+  // 抓取一个网站
   scrapeStatus, err := app.ScrapeUrl("https://firecrawl.dev", firecrawl.ScrapeParams{
     Formats: []string{"markdown", "html"},
   })
@@ -31,8 +31,8 @@ func main() {
 
   fmt.Println(scrapeStatus)
 
-	// Crawl a website
-  idempotencyKey := uuid.New().String() // optional idempotency key
+	// 爬取一个网站
+  idempotencyKey := uuid.New().String() // 可选的幂等性密钥
   crawlParams := &firecrawl.CrawlParams{
 		ExcludePaths: []string{"blog/*"},
 		MaxDepth:     ptr(2),

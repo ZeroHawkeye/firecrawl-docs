@@ -1,16 +1,15 @@
 ---
-title: 'Development'
-description: 'Learn how to preview changes locally'
-og:title: "Development | Firecrawl"
-og:description: "Learn how to preview changes locally"
+title: '开发'
+description: '学习如何在本地预览更改'
+og:title: "开发 | Firecrawl"
+og:description: "学习如何在本地预览更改"
 ---
 
 <Info>
-  **Prerequisite** You should have installed Node.js (version 18.10.0 or
-  higher).
+  **前提条件** 您应该已安装Node.js（版本18.10.0或更高）。
 </Info>
 
-Step 1. Install Mintlify on your OS:
+步骤1. 在您的操作系统上安装Mintlify：
 
 <CodeGroup>
 
@@ -24,31 +23,31 @@ yarn global add mintlify
 
 </CodeGroup>
 
-Step 2. Go to the docs are located (where you can find `mint.json`) and run the following command:
+步骤2. 进入文档所在位置（您可以找到`mint.json`的地方）并运行以下命令：
 
 ```bash
 mintlify dev
 ```
 
-The documentation website is now available at `http://localhost:3000`.
+文档网站现在可以在`http://localhost:3000`访问。
 
-### Custom Ports
+### 自定义端口
 
-Mintlify uses port 3000 by default. You can use the `--port` flag to customize the port Mintlify runs on. For example, use this command to run in port 3333:
+Mintlify默认使用3000端口。您可以使用`--port`标志自定义Mintlify运行的端口。例如，使用此命令在3333端口运行：
 
 ```bash
 mintlify dev --port 3333
 ```
 
-You will see an error like this if you try to run Mintlify in a port that's already taken:
+如果您尝试在已被占用的端口上运行Mintlify，将看到类似这样的错误：
 
 ```md
 Error: listen EADDRINUSE: address already in use :::3000
 ```
 
-## Mintlify Versions
+## Mintlify版本
 
-Each CLI is linked to a specific version of Mintlify. Please update the CLI if your local website looks different than production.
+每个CLI都链接到特定版本的Mintlify。如果您的本地网站看起来与生产环境不同，请更新CLI。
 
 <CodeGroup>
 
@@ -62,39 +61,35 @@ yarn global upgrade mintlify
 
 </CodeGroup>
 
-## Deployment
+## 部署
 
 <Tip>
-  Unlimited editors available under the [Startup
-  Plan](https://mintlify.com/pricing)
+  [Startup Plan](https://mintlify.com/pricing)下提供无限编辑者
 </Tip>
 
-You should see the following if the deploy successfully went through:
+如果部署成功，您应该看到以下内容：
 
 <Frame>
   <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
-## Troubleshooting
+## 故障排除
 
-Here's how to solve some common problems when working with the CLI.
+以下是使用CLI时解决一些常见问题的方法。
 
 <AccordionGroup>
-  <Accordion title="Mintlify is not loading">
-    Update to Node v18. Run `mintlify install` and try again.
+  <Accordion title="Mintlify未加载">
+    更新到Node v18。运行`mintlify install`并重试。
   </Accordion>
-  <Accordion title="No such file or directory on Windows">
-Go to the `C:/Users/Username/.mintlify/` directory and remove the `mint`
-folder. Then Open the Git Bash in this location and run `git clone
-https://github.com/mintlify/mint.git`.
+  <Accordion title="Windows上没有此类文件或目录">
+前往`C:/Users/Username/.mintlify/`目录并删除`mint`文件夹。然后在此位置打开Git Bash并运行`git clone https://github.com/mintlify/mint.git`。
 
-Repeat step 3.
+重复步骤3。
 
   </Accordion>
-  <Accordion title="Getting an unknown error">
-    Try navigating to the root of your device and delete the ~/.mintlify folder.
-    Then run `mintlify dev` again.
+  <Accordion title="遇到未知错误">
+    尝试导航到设备根目录并删除~/.mintlify文件夹。然后再次运行`mintlify dev`。
   </Accordion>
 </AccordionGroup>
 
-Curious about what changed in a CLI version? [Check out the CLI changelog.](/changelog/command-line)
+想了解CLI版本中的变化？[查看CLI更新日志。](/changelog/command-line)

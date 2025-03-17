@@ -16,7 +16,7 @@ let json_schema = json!({
             },
             "minItems": 5,
             "maxItems": 5,
-            "description": "Top 5 stories on Hacker News"
+            "description": "Hacker News上的前5个故事"
         }
     },
     "required": ["top"]
@@ -36,7 +36,6 @@ let llm_extraction_result = app
     .await;
 
 match llm_extraction_result {
-    Ok(data) => println!("LLM Extraction Result:\n{:#?}", data.extract.unwrap()),
-    Err(e) => eprintln!("LLM Extraction failed: {}", e),
+    Ok(data) => println!("LLM提取结果:\n{:#?}", data.extract.unwrap()),
+    Err(e) => eprintln!("LLM提取失败: {}", e),
 }
-```
