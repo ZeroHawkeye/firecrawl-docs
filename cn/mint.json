@@ -1,0 +1,211 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Firecrawl Docs",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg",
+    "href": "https://firecrawl.dev"
+  },
+  "versions": ["v1", "v0"],
+  "metadata": {
+    "og:title": "Firecrawl Docs",
+    "og:description": "Firecrawl allows you turn websites to LLM-ready data in seconds.",
+    "og:url": "https://docs.firecrawl.dev",
+    "og:image": "/images/og.png",
+    "twitter:title": "Firecrawl Docs",
+    "twitter:image": "/images/og.png"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#000",
+    "light": "#fff",
+    "dark": "#000",
+    "anchors": {
+      "from": "#FF713C",
+      "to": "#FFBA47"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Status",
+      "url": "https://firecrawl.betteruptime.com"
+    },
+    {
+      "name": "Support",
+      "url": "mailto:help@firecrawl.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "type": "github",
+    "url": "https://github.com/mendableai/firecrawl"
+  },
+  "tabs": [
+    {
+      "name": "SDKs",
+      "url": "sdks",
+      "version": "v1"
+    },
+    {
+      "name": "SDKs",
+      "url": "v0/sdks",
+      "version": "v0"
+    },
+    {
+      "name": "Learn",
+      "url": "https://www.firecrawl.dev/blog/category/tutorials"
+    },
+    {
+      "name": "API Reference",
+      "url": "api-reference",
+      "version": "v1"
+    },
+    {
+      "name": "API Reference",
+      "url": "v0/api-reference",
+      "version": "v0"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Playground",
+      "icon": "play",
+      "url": "https://firecrawl.dev/playground"
+    },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://firecrawl.dev/blog"
+    },
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.gg/gSmWdAkdwd"
+    },
+    {
+      "name": "Talk to Us",
+      "icon": "comments",
+      "url": "https://calendly.com/d/cj83-ngq-knk/meet-firecrawl"
+    },
+    {
+      "name": "Changelog",
+      "icon": "list",
+      "url": "https://firecrawl.dev/changelog"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction",
+        "launch-week",
+        "v1-welcome",
+        "rate-limits",
+        "integrations",
+        "advanced-scraping-guide"
+      ],
+      "version": "v1"
+    },
+    {
+      "group": "Get Started",
+      "pages": [
+        "v0/introduction",
+        "v0/advanced-scraping-guide",
+        "rate-limits",
+        "integrations"
+      ],
+      "version": "v0"
+    },
+    {
+      "group": "Features",
+      "pages": ["features/scrape", "features/crawl", "features/map"],
+      "version": "v1"
+    },
+    {
+      "group": "Beta Features",
+      "pages": ["features/extract"],
+      "version": "v1"
+    },
+    {
+      "group": "Features",
+      "pages": [
+        "v0/features/scrape",
+        "v0/features/crawl",
+        "v0/features/extract",
+        "features/search"
+      ],
+      "version": "v0"
+    },
+    
+    {
+      "group": "Integrations",
+      "pages": [
+        "integrations/langchain",
+        "integrations/llamaindex",
+        "integrations/crewai",
+        "integrations/dify",
+        "integrations/flowise",
+        "integrations/langflow",
+        "integrations/camelai"
+      ]
+    },
+    
+ 
+    {
+      "group": "Contributing",
+      "pages": ["contributing/open-source-or-cloud", "contributing/guide", "contributing/self-host"]
+    },
+    {
+      "group": "Using the API",
+      "pages": ["api-reference/introduction"],
+      "version": "v1"
+    },
+    {
+      "group": "Using the API",
+      "pages": ["v0/api-reference/introduction"],
+      "version": "v0"
+    },
+    {
+      "group": "Overall",
+      "pages": ["sdks/overview"]
+    },
+    {
+      "group": "SDKs",
+      "pages": ["sdks/python", "sdks/node", "sdks/go", "sdks/rust"],
+      "version": "v1"
+    },
+    {
+      "group": "SDKs",
+      "pages": ["v0/sdks/python", "v0/sdks/node", "v0/sdks/go", "v0/sdks/rust"],
+      "version": "v0"
+    },
+    {
+      "group": "Endpoints",
+      "pages": [
+        "api-reference/endpoint/scrape",
+        "api-reference/endpoint/crawl-post",
+        "api-reference/endpoint/crawl-get",
+        "api-reference/endpoint/crawl-delete",
+        "api-reference/endpoint/map",
+        "api-reference/endpoint/batch-scrape",
+        "api-reference/endpoint/batch-scrape-get"
+      ],
+      "version": "v1"
+    },
+    {
+      "group": "Endpoints",
+      "pages": [
+        "v0/api-reference/endpoint/scrape",
+        "v0/api-reference/endpoint/search",
+        "v0/api-reference/endpoint/crawl",
+        "v0/api-reference/endpoint/status",
+        "v0/api-reference/endpoint/crawl-cancel"
+      ],
+      "version": "v0"
+    }
+  ],
+  "footerSocials": {
+    "x": "https://x.com/mendableai",
+    "github": "https://github.com/mendableai/firecrawl",
+    "linkedin": "https://www.linkedin.com/company/sideguide-dev/"
+  }
+}
