@@ -7,8 +7,7 @@
     "href": "https://firecrawl.dev"
   },
   "versions": [
-    "v1",
-    "v0"
+    "v1"
   ],
   "metadata": {
     "og:title": "Firecrawl 文档",
@@ -49,11 +48,6 @@
       "version": "v1"
     },
     {
-      "name": "开发工具包",
-      "url": "v0/sdks",
-      "version": "v0"
-    },
-    {
       "name": "学习",
       "url": "https://www.firecrawl.dev/blog/category/tutorials"
     },
@@ -61,11 +55,6 @@
       "name": "API 参考",
       "url": "api-reference",
       "version": "v1"
-    },
-    {
-      "name": "API 参考",
-      "url": "v0/api-reference",
-      "version": "v0"
     }
   ],
   "anchors": [
@@ -109,16 +98,6 @@
       "version": "v1"
     },
     {
-      "group": "开始使用",
-      "pages": [
-        "v0/introduction",
-        "v0/advanced-scraping-guide",
-        "rate-limits",
-        "integrations"
-      ],
-      "version": "v0"
-    },
-    {
       "group": "功能",
       "pages": [
         "features/scrape",
@@ -133,16 +112,6 @@
         "features/extract"
       ],
       "version": "v1"
-    },
-    {
-      "group": "功能",
-      "pages": [
-        "v0/features/scrape",
-        "v0/features/crawl",
-        "v0/features/extract",
-        "features/search"
-      ],
-      "version": "v0"
     },
     {
       "group": "集成",
@@ -172,13 +141,6 @@
       "version": "v1"
     },
     {
-      "group": "使用 API",
-      "pages": [
-        "v0/api-reference/introduction"
-      ],
-      "version": "v0"
-    },
-    {
       "group": "概览",
       "pages": [
         "sdks/overview"
@@ -195,16 +157,6 @@
       "version": "v1"
     },
     {
-      "group": "开发工具包",
-      "pages": [
-        "v0/sdks/python",
-        "v0/sdks/node",
-        "v0/sdks/go",
-        "v0/sdks/rust"
-      ],
-      "version": "v0"
-    },
-    {
       "group": "端点",
       "pages": [
         "api-reference/endpoint/scrape",
@@ -216,17 +168,6 @@
         "api-reference/endpoint/batch-scrape-get"
       ],
       "version": "v1"
-    },
-    {
-      "group": "端点",
-      "pages": [
-        "v0/api-reference/endpoint/scrape",
-        "v0/api-reference/endpoint/search",
-        "v0/api-reference/endpoint/crawl",
-        "v0/api-reference/endpoint/status",
-        "v0/api-reference/endpoint/crawl-cancel"
-      ],
-      "version": "v0"
     }
   ],
   "footerSocials": {
