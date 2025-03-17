@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Firecrawl Docs",
+  "name": "Firecrawl 文档",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg",
@@ -8,11 +8,11 @@
   },
   "versions": ["v1", "v0"],
   "metadata": {
-    "og:title": "Firecrawl Docs",
-    "og:description": "Firecrawl allows you turn websites to LLM-ready data in seconds.",
+    "og:title": "Firecrawl 文档",
+    "og:description": "Firecrawl 让您能够在几秒钟内将网站转换为LLM就绪的数据。",
     "og:url": "https://docs.firecrawl.dev",
     "og:image": "/images/og.png",
-    "twitter:title": "Firecrawl Docs",
+    "twitter:title": "Firecrawl 文档",
     "twitter:image": "/images/og.png"
   },
   "favicon": "/favicon.png",
@@ -27,11 +27,11 @@
   },
   "topbarLinks": [
     {
-      "name": "Status",
+      "name": "状态",
       "url": "https://firecrawl.betteruptime.com"
     },
     {
-      "name": "Support",
+      "name": "支持",
       "url": "mailto:help@firecrawl.com"
     }
   ],
@@ -41,60 +41,60 @@
   },
   "tabs": [
     {
-      "name": "SDKs",
+      "name": "SDK",
       "url": "sdks",
       "version": "v1"
     },
     {
-      "name": "SDKs",
+      "name": "SDK",
       "url": "v0/sdks",
       "version": "v0"
     },
     {
-      "name": "Learn",
+      "name": "学习",
       "url": "https://www.firecrawl.dev/blog/category/tutorials"
     },
     {
-      "name": "API Reference",
+      "name": "API 参考",
       "url": "api-reference",
       "version": "v1"
     },
     {
-      "name": "API Reference",
+      "name": "API 参考",
       "url": "v0/api-reference",
       "version": "v0"
     }
   ],
   "anchors": [
     {
-      "name": "Playground",
+      "name": "演示平台",
       "icon": "play",
       "url": "https://firecrawl.dev/playground"
     },
     {
-      "name": "Blog",
+      "name": "博客",
       "icon": "newspaper",
       "url": "https://firecrawl.dev/blog"
     },
     {
-      "name": "Community",
+      "name": "社区",
       "icon": "discord",
       "url": "https://discord.gg/gSmWdAkdwd"
     },
     {
-      "name": "Talk to Us",
+      "name": "联系我们",
       "icon": "comments",
       "url": "https://calendly.com/d/cj83-ngq-knk/meet-firecrawl"
     },
     {
-      "name": "Changelog",
+      "name": "更新日志",
       "icon": "list",
       "url": "https://firecrawl.dev/changelog"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "开始使用",
       "pages": [
         "introduction",
         "launch-week",
@@ -106,7 +106,7 @@
       "version": "v1"
     },
     {
-      "group": "Get Started",
+      "group": "开始使用",
       "pages": [
         "v0/introduction",
         "v0/advanced-scraping-guide",
@@ -116,17 +116,17 @@
       "version": "v0"
     },
     {
-      "group": "Features",
+      "group": "功能",
       "pages": ["features/scrape", "features/crawl", "features/map"],
       "version": "v1"
     },
     {
-      "group": "Beta Features",
+      "group": "测试功能",
       "pages": ["features/extract"],
       "version": "v1"
     },
     {
-      "group": "Features",
+      "group": "功能",
       "pages": [
         "v0/features/scrape",
         "v0/features/crawl",
@@ -137,7 +137,7 @@
     },
     
     {
-      "group": "Integrations",
+      "group": "集成",
       "pages": [
         "integrations/langchain",
         "integrations/llamaindex",
@@ -151,35 +151,35 @@
     
  
     {
-      "group": "Contributing",
+      "group": "贡献",
       "pages": ["contributing/open-source-or-cloud", "contributing/guide", "contributing/self-host"]
     },
     {
-      "group": "Using the API",
+      "group": "使用API",
       "pages": ["api-reference/introduction"],
       "version": "v1"
     },
     {
-      "group": "Using the API",
+      "group": "使用API",
       "pages": ["v0/api-reference/introduction"],
       "version": "v0"
     },
     {
-      "group": "Overall",
+      "group": "概述",
       "pages": ["sdks/overview"]
     },
     {
-      "group": "SDKs",
+      "group": "SDK",
       "pages": ["sdks/python", "sdks/node", "sdks/go", "sdks/rust"],
       "version": "v1"
     },
     {
-      "group": "SDKs",
+      "group": "SDK",
       "pages": ["v0/sdks/python", "v0/sdks/node", "v0/sdks/go", "v0/sdks/rust"],
       "version": "v0"
     },
     {
-      "group": "Endpoints",
+      "group": "端点",
       "pages": [
         "api-reference/endpoint/scrape",
         "api-reference/endpoint/crawl-post",
@@ -192,7 +192,7 @@
       "version": "v1"
     },
     {
-      "group": "Endpoints",
+      "group": "端点",
       "pages": [
         "v0/api-reference/endpoint/scrape",
         "v0/api-reference/endpoint/search",
